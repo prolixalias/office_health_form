@@ -14,8 +14,8 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 form_url = 'https://docs.google.com/forms/d/e/1FAIpQLSdha1TIwLnaI-e9K_Qqrr4lRIamXH5okJCTuit5nKTlzSJ8kQ/viewform?usp=sf_link'
 
-# if less than or equal to 2: ailment true | 3:20 ratio | (~14.285714% chance)
-random_has_ailment = randrange(20)
+# if less than or equal to 2: ailment true | 3:30 ratio | (10% chance)
+random_has_ailment = randrange(30)
 trigger_ailment_less_than_or_equal_to = 2
 
 chrome_options = webdriver.ChromeOptions()
@@ -41,14 +41,6 @@ driver = webdriver.Chrome('./chromedriver', desired_capabilities=caps, options=c
 
 def load_page(driver,form_url):
     driver.get(form_url)
-
-# def look_for_resubmit_link(driver):
-#     link_another_request = driver.find_element_by_css_selector('.freebirdFormviewerViewResponseLinksContainer')
-#     if link_another_request:
-#         print("Found link to submit another form, clicking it")
-#         link_another_request.click()
-#     else:
-#         print("Continuing submission")
 
 def populate_name_text(driver,employee):
     text_area = driver.find_element_by_xpath("//input[@type='text']")
@@ -101,7 +93,7 @@ def populate_concern_text(driver,ailment_message):
 def click_submit(driver):
     submit_button = driver.find_element_by_css_selector(".appsMaterialWizButtonEl")
     if submit_button:
-        print("Found submit button, clicking it")
+        print("Found submit button, clicking it\n")
         submit_button.click()
     else:
         print("Submit button not found!")
@@ -112,7 +104,7 @@ def click_submit(driver):
 #
 
 started = datetime.now(timezone.utc).astimezone().isoformat()
-print("Started: " + started)
+print("\nStarted: " + started +"\n")
 
 print("Reading employee file")
 employee_file = open('employees.json',)
@@ -168,4 +160,6 @@ for employee in employee_data:
 # pprint(employee_list)
 
 stopped = datetime.now(timezone.utc).astimezone().isoformat()
-print("Stopped: " + stopped)
+print("\nStopped: " + stopped + "\n")
+
+### End
