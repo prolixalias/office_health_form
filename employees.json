@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "attributes": {
+      "personalInfo": {
+      "firstName": "Paul",
+      "lastName": "Talbot",
+      "emailAddress": "fake@rybamarine.com",
+      "phone": "231-420-0000",
+      "sex": "male"
+      }
+    }
+  },
+  {
+    "id": 1,
+    "attributes": {
+      "personalInfo": {
+      "firstName": "Ralph",
+      "lastName": "Farver",
+      "emailAddress": "fake@rybamarine.com",
+      "phone": "231-420-9427",
+      "sex": "male"
+      }
+    }
+  },
+  {
+    "id": 2,
+    "attributes": {
+      "personalInfo": {
+      "firstName": "Devin",
+      "lastName": "Bristley",
+      "emailAddress": "fake@rybamarine.com",
+      "phone": "231-420-9427",
+      "sex": "female"
+      }
+    }
+  },
+  {
+    "id": 3,
+    "attributes": {
+      "personalInfo": {
+      "firstName": "Kristi",
+      "lastName": "Bristley",
+      "emailAddress": "fake@rybamarine.com",
+      "phone": "231-420-9427",
+      "sex": "female"
+      }
+    }
+  },
+  {
+    "id": 4,
+    "attributes": {
+      "personalInfo": {
+      "firstName": "Cheddar",
+      "lastName": "",
+      "emailAddress": "fake@rybamarine.com",
+      "phone": "231-420-9427",
+      "sex": "non-binary"
+      }
+    }
+  }
+]

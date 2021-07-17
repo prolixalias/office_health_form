@@ -1,0 +1,72 @@
+{
+  "male": [
+    {
+      "id": 0, 
+      "message": "migrane that comes and goes"
+    },
+    {
+      "id": 1,
+      "message": "scrape, top of right hand"
+    },
+    {
+      "id": 2,
+      "message": "frat hazing incident, I don't want to talk about"
+    },
+    {
+      "id": 3,
+      "message": "stubbed toe, it's fine though"
+    },
+    {
+      "id": 4,
+      "message": "meat-sweats"
+    },
+    {
+      "id": 5,
+      "message": "sunburn"
+    }    
+  ],
+  "female": [
+    {
+      "id": 0,
+      "message": "hangnail"
+    },
+    {
+      "id": 1,
+      "message": "slight ankle sprain while golfing"
+    },
+    {
+      "id": 2,
+      "message": "lady problems"
+    },
+    {
+      "id": 3,
+      "message": "dry elbow, lotion should do the trick"
+    },
+    {
+      "id": 4,
+      "message": "dehydrated"
+    }
+  ],
+  "non-binary": [
+    {
+      "id": 0,
+      "message": "recovering from surgery"
+    },
+    {
+      "id": 1,
+      "message": "eye strain"
+    },
+    {
+      "id": 2,
+      "message": "swimmer's itch"
+    },
+    {
+      "id": 3,
+      "message": "shower too hot"
+    },
+    {
+      "id": 4,
+      "message": "heartbroken"
+    }
+  ]
+}
