@@ -7,6 +7,8 @@ from datetime import datetime, timezone
 from random import randrange
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 
 ### Variables
 #
@@ -32,8 +34,10 @@ prefs = {"profile.managed_default_content_settings.images": 2}
 chrome_options.add_experimental_option("prefs", prefs)
 caps = DesiredCapabilities.CHROME
 caps['goog:loggingPrefs'] = {'performance': 'ALL'}
+service = Service("./chromedriver")
+# driver = webdriver.Chrome('./chromedriver', desired_capabilities=caps, options=chrome_options)
 
-driver = webdriver.Chrome('./chromedriver', desired_capabilities=caps, options=chrome_options)
+driver = webdriver.Chrome(service=service, options=chrome_options)
 
 ### Functions
 #
@@ -43,7 +47,8 @@ def load_page(driver,form_url):
     driver.get(form_url)
 
 def populate_name_text(driver,employee):
-    text_area = driver.find_element_by_xpath("//input[@type='text']")
+    # text_area = driver.find_element_by_xpath("//input[@type='text']")
+    text_area = driver.find_element(By.XPATH,"//input[@type='text']")
     text_area_value = employee['attributes']['personalInfo']['firstName'] + " " + employee['attributes']['personalInfo']['lastName']
     if text_area:
         print("Found name field, populating it with: " + text_area_value)
@@ -54,7 +59,8 @@ def populate_name_text(driver,employee):
         exit
 
 def click_not_ill_radio_button(driver):
-    radio_button = driver.find_element_by_css_selector('#i12')
+    # radio_button = driver.find_element_by_css_selector('#i12')
+    radio_button = driver.find_element(By.CSS_SELECTOR,"#i12")
     if radio_button:
         print("Found not ill radio button, clicking it")
         radio_button.click()
@@ -63,7 +69,8 @@ def click_not_ill_radio_button(driver):
         exit
 
 def click_not_concerned_radio_button(driver):
-    radio_button = driver.find_element_by_css_selector('#i22')
+    # radio_button = driver.find_element_by_css_selector('#i22')
+    radio_button = driver.find_element(By.CSS_SELECTOR,"#i22")
     if radio_button:
         print("Found not concerned radio button, clicking it")
         radio_button.click()
@@ -72,7 +79,8 @@ def click_not_concerned_radio_button(driver):
         exit
 
 def click_concerned_radio_button(driver):
-    radio_button = driver.find_element_by_css_selector('#i19')
+    # radio_button = driver.find_element_by_css_selector('#i19')
+    radio_button = driver.find_element(By.CSS_SELECTOR,"#i19")
     if radio_button:
         print("Found concerned radio button, clicking it")
         radio_button.click()
@@ -81,7 +89,8 @@ def click_concerned_radio_button(driver):
         exit
 
 def populate_concern_text(driver,ailment_message):
-    text_area = driver.find_element_by_xpath("//textarea")
+    # text_area = driver.find_element_by_xpath("//textarea")
+    text_area = driver.find_element(By.XPATH,"//textarea")
     if text_area:
         print("Found concern text area, populating it with: " + ailment_message)
         text_area.click()
@@ -91,7 +100,8 @@ def populate_concern_text(driver,ailment_message):
         exit
 
 def click_submit(driver):
-    submit_button = driver.find_element_by_css_selector(".appsMaterialWizButtonEl")
+    # submit_button = driver.find_element_by_css_selector(".appsMaterialWizButtonEl")
+    submit_button = driver.find_element(By.CSS_SELECTOR,".appsMaterialWizButtonEl")
     if submit_button:
         print("Found submit button, clicking it\n")
         submit_button.click()
